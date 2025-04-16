@@ -55,7 +55,7 @@ exports.UpdateBook = async function(req , res){
         if (!updated) {
             return res.status(404).json({ message: "Book not found" });
         }
-        res.json({ message: "Book updated successfully", data: updated });                
+        res.json({ message: "Book is updated successfully", data: updated });                
     }catch(err){
         console.log(err);
         res.status(400).json({ message: err.message || "Something went wrong" });
