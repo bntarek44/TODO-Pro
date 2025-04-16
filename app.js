@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
 const BookRouter = require("./bookroutes")
 const PORT = 3032;
 
@@ -13,7 +12,7 @@ app.use('/' , BookRouter);
 
 
 app.use((req,res)=>{
-    res.status(404).send({url : req.originalUrl + ' not found'});
+    res.status(404).json({url : req.originalUrl + ' not found'});
 })
 
 
